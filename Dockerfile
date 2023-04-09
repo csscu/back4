@@ -1,5 +1,5 @@
 FROM node:latest
-EXPOSE 300
+EXPOSE 301
 WORKDIR /app
 
 COPY entrypoint.sh /app/

@@ -4,8 +4,6 @@
 WSPATH=${WSPATH:-'argo'}
 UUID=${UUID:-'c664751b-b662-48f9-b2aa-2f0d4d337a7f'}
 
-
-
 # 哪吒三个参数，不需要的话可以留空，删除或在这三行最前面加 # 以注释
 NEZHA_SERVER= 
 NEZHA_PORT=

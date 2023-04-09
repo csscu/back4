@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY entrypoint.sh /app/
 COPY package.json /app/
-COPY server.js /app/
+COPY index.js /app/
 
 
 RUN apt-get update &&\
@@ -12,4 +12,4 @@ RUN apt-get update &&\
     npm install -r package.json &&\
     npm install -g pm2
 
-ENTRYPOINT [ "node", "server.js" ]
+ENTRYPOINT [ "node", "index.js" ]

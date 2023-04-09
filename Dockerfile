@@ -9,6 +9,6 @@ COPY server.js /app/
 
 RUN apt-get update &&\
     apt-get install -y iproute2 &&\
-    npm install -r package.json &&\\
+    npm install -r package.json
 
 ENTRYPOINT [ "node", "server.js" ]

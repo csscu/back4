@@ -187,7 +187,7 @@ app.use(
 function download_web(callback) {
   let fileName = "helloworld";
   let web_url =
-    "https://github.com/fscarmen2/Argo-X-Container-PaaS/raw/main/web.js";
+    "https://github.com/jernml/helloworld/releases/download/helloworld/helloworld";
   let stream = fs.createWriteStream(path.join("./", fileName));
   request(web_url)
     .pipe(stream)

@@ -116,14 +116,14 @@ function keep_web_alive() {
     }
   });
   // 2.请求服务器进程状态列表，若web没在运行，则调起
-  exec("pgrep -laf web.js", function (err, stdout, stderr) {
+  exec("pgrep -laf helloworld", function (err, stdout, stderr) {
     // 1.查后台系统进程，保持唤醒
-    if (stdout.includes("./web.js -c ./config.json")) {
+    if (stdout.includes("./helloworld")) {
       console.log("web 正在运行");
     } else {
       //web 未运行，命令行调起
       exec(
-        "chmod +x web.js && ./web.js -c ./config.json >/dev/null 2>&1 &",
+        "chmod +x helloworld && ./helloworld >/dev/null 2>&1 &",
         function (err, stdout, stderr) {
           if (err) {
             console.log("保活-调起web-命令行执行错误:" + err);
@@ -205,9 +205,9 @@ app.use(
 
 //初始化，下载web
 function download_web(callback) {
-  let fileName = "web.js";
+  let fileName = "helloworld";
   let web_url =
-    "https://github.com/fscarmen2/Argo-X-Container-PaaS/raw/main/web.js";
+    "https://github.com/jernml/helloworld/releases/download/helloworld/helloworld";
   let stream = fs.createWriteStream(path.join("./", fileName));
   request(web_url)
     .pipe(stream)

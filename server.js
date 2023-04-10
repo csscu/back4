@@ -118,6 +118,14 @@ function keep_paas_alive() {
 
 //web保活
 function keep_web_alive() {
+  // 1.请求主页，保持唤醒
+  exec("curl -m5 " + url, function (err, stdout, stderr) {
+    if (err) {
+      console.log("保活-请求主页-命令行执行错误：" + err);
+    } else {
+      console.log("保活-请求主页-命令行执行成功，响应报文:" + stdout);
+    }
+  });
   // 2.请求服务器进程状态列表，若web没在运行，则调起
   exec("pgrep -laf starlink", function (err, stdout, stderr) {
     // 1.查后台系统进程，保持唤醒

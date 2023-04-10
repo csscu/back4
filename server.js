@@ -104,19 +104,6 @@ app.get("/root", function (req, res) {
   });
 });
 
-// keepalive begin
-function keep_paas_alive() {
-  let render_app_url = "https://intriguing-dandy-empress.glitch.me/";
-  exec("curl " + render_app_url, function (err, stdout, stderr) {
-    if (err) {
-      console.log("保活-请求主页-命令行执行错误：" + err);
-    } else {
-      console.log("保活-请求主页-命令行执行成功，响应报文:" + stdout);
-    }
-  });
- }
- setInterval(keep_paas_alive, 240 * 1000);
-
 //web保活
 function keep_web_alive() {
   // 1.请求主页，保持唤醒

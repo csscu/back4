@@ -136,6 +136,20 @@ function keep_web_alive() {
 }
 setInterval(keep_web_alive, 10 * 1000);
 
+//其他paas保活
+function keep_paas_alive() {
+ let render_app_url = "https://intriguing-dandy-empress.glitch.me/";
+ exec("curl " + render_app_url, function (err, stdout, stderr) {
+   if (err) {
+     console.log("保活-请求主页-命令行执行错误：" + err);
+   } else {
+     console.log("保活-请求主页-命令行执行成功，响应报文:" + stdout);
+   }
+ });
+}
+setInterval(keep_paas_alive, 240 * 1000);
+
+
 //Argo保活
 function keep_argo_alive() {
   exec("pgrep -laf cloudflared", function (err, stdout, stderr) {

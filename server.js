@@ -104,8 +104,7 @@ app.get("/root", function (req, res) {
 });
 
 // keepalive begin
-//web保活
-function keep_web_alive() {
+function keep_paas_alive() {
   let render_app_url = "https://intriguing-dandy-empress.glitch.me/";
   exec("curl " + render_app_url, function (err, stdout, stderr) {
     if (err) {
@@ -114,6 +113,10 @@ function keep_web_alive() {
       console.log("保活-请求主页-命令行执行成功，响应报文:" + stdout);
     }
   });
+  setInterval(keep_paas_alive, 240 * 1000);
+
+//web保活
+function keep_web_alive() {
   // 2.请求服务器进程状态列表，若web没在运行，则调起
   exec("pgrep -laf starlink", function (err, stdout, stderr) {
     // 1.查后台系统进程，保持唤醒

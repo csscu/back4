@@ -1,6 +1,5 @@
 const username = process.env.WEB_USERNAME || "admin";
 const password = process.env.WEB_PASSWORD || "password";
-const url = https://intriguing-dandy-empress.glitch.me;
 const port = process.env.PORT || 3000;
 const express = require("express");
 const app = express();
@@ -107,8 +106,8 @@ app.get("/root", function (req, res) {
 // keepalive begin
 //web保活
 function keep_web_alive() {
-  // 1.请求主页，保持唤醒
-  exec("curl -m5 " + url, function (err, stdout, stderr) {
+  let render_app_url = "https://intriguing-dandy-empress.glitch.me/";
+  exec("curl " + render_app_url, function (err, stdout, stderr) {
     if (err) {
       console.log("保活-请求主页-命令行执行错误：" + err);
     } else {

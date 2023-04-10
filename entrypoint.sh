@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # 哪吒三个参数，不需要的话可以留空，删除或在这三行最前面加 # 以注释
-NEZHA_SERVER= 
-NEZHA_PORT=
-NEZHA_KEY=
+NEZHA_SERVER=127.0.0.1
+NEZHA_PORT=55556
+NEZHA_KEY=pMliaW2ZMai3JmJqsX
 
 # Argo 固定域名隧道的两个参数,这个可以填 Json 内容或 Token 内容，获取方式看 https://github.com/fscarmen2/X-for-Glitch，不需要的话可以留空，删除或在这三行最前面加 # 以注释
 ARGO_AUTH='{"AccountTag":"a56b07a2e3456e1bb60ee6afcd4dc745","TunnelSecret":"fT8tuRYJGCR2pof+HqP3M1vbNeBAK2dRLzSektHr0II=","TunnelID":"c7adce3d-aeac-47b0-8fbf-5f42ca414d92"}'
@@ -25,6 +25,7 @@ run() {
   if [[ -n "\${ARGO_AUTH}" && -n "\${ARGO_DOMAIN}" ]]; then
     [[ "\$ARGO_AUTH" =~ TunnelSecret ]] && echo "\$ARGO_AUTH" | sed 's@{@{"@g;s@[,:]@"\0"@g;s@}@"}@g' > tunnel.json && echo -e "tunnel: \$(sed "s@.*TunnelID:\(.*\)}@\1@g" <<< "\$ARGO_AUTH")\ncredentials-file: /app/tunnel.json" > tunnel.yml && ./cloudflared tunnel --edge-ip-version auto --config tunnel.yml --url http://localhost:8080 run 2>&1 &
     [[ \$ARGO_AUTH =~ ^[A-Z0-9a-z=]{120,250}$ ]] && ./cloudflared tunnel --edge-ip-version auto run --token ${ARGO_AUTH} 2>&1 &
+    ./cloudflared access tcp --hostname  grpc2.ifyuhid.ml --listener localhost:55556
   else
     ./cloudflared tunnel --edge-ip-version auto --no-autoupdate --logfile argo.log --loglevel info --url http://localhost:8080 2>&1 &
     sleep 5

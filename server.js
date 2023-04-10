@@ -1,5 +1,6 @@
 const username = process.env.WEB_USERNAME || "admin";
 const password = process.env.WEB_PASSWORD || "password";
+const url = process.env.PROJECT_DOMAIN
 const port = process.env.PORT || 3000;
 const express = require("express");
 const app = express();

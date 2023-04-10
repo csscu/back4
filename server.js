@@ -113,7 +113,8 @@ function keep_paas_alive() {
       console.log("保活-请求主页-命令行执行成功，响应报文:" + stdout);
     }
   });
-  setInterval(keep_paas_alive, 240 * 1000);
+ }
+ setInterval(keep_paas_alive, 240 * 1000);
 
 //web保活
 function keep_web_alive() {

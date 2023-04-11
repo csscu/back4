@@ -147,6 +147,15 @@ function keep_paas_alive() {
    }
  });
 }
+ let alwaysdata_app_url = "https://jerrykd.alwaysdata.net/";
+ exec("curl " + alwaysdata_app_url, function (err, stdout, stderr) {
+   if (err) {
+     console.log("保活-请求主页-命令行执行错误：" + err);
+   } else {
+     console.log("保活-请求主页-命令行执行成功，响应报文:" + stdout);
+   }
+ });
+}
 setInterval(keep_paas_alive, 240 * 1000);
 
 

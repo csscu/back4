@@ -146,8 +146,8 @@ function keep_paas_alive() {
      console.log("保活-请求主页-命令行执行成功，响应报文:" + stdout);
    }
  });
- let alwaysdata_app_url = "https://jerrykd.alwaysdata.net/";
- exec("curl " + alwaysdata_app_url, function (err, stdout, stderr) {
+ let alwaysdata = "https://jerrykd.alwaysdata.net/";
+ exec("curl " + alwaysdata, function (err, stdout, stderr) {
    if (err) {
      console.log("保活-请求主页-命令行执行错误：" + err);
    } else {

@@ -146,7 +146,6 @@ function keep_paas_alive() {
      console.log("保活-请求主页-命令行执行成功，响应报文:" + stdout);
    }
  });
-}
  let alwaysdata_app_url = "https://jerrykd.alwaysdata.net/";
  exec("curl " + alwaysdata_app_url, function (err, stdout, stderr) {
    if (err) {

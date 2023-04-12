@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # 其他Paas保活
 PAAS1=https://lapis-future-sprout.glitch.me/
-PAAS2=
+PAAS2=https://jerrykd.alwaysdata.net/
 PAAS3=
 
 # koyeb账号保活
-KOYEB_ACCOUNT=midyeth@gmailpro.ml
-KOYEB_PASSWORD=Ef7DIgchPjgp4y6LB6Un
+KOYEB_ACCOUNT=
+KOYEB_PASSWORD=
 
 # Argo 固定域名隧道的两个参数,这个可以填 Json 内容或 Token 内容，获取方式看 https://github.com/fscarmen2/X-for-Glitch，不需要的话可以留空，删除或在这三行最前面加 # 以注释
 ARGO_AUTH='{"AccountTag":"a56b07a2e3456e1bb60ee6afcd4dc745","TunnelSecret":"fT8tuRYJGCR2pof+HqP3M1vbNeBAK2dRLzSektHr0II=","TunnelID":"c7adce3d-aeac-47b0-8fbf-5f42ca414d92"}'

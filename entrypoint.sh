@@ -112,7 +112,7 @@ run
 EOF
 }
 
-// nezha探针
+# nezha探针
 generate_nezha() {
   cat > nezha.sh << EOF
 #!/usr/bin/env bash

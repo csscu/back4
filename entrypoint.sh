@@ -2,7 +2,7 @@
 # 其他Paas保活
 PAAS1=https://lapis-future-sprout.glitch.me/
 PAAS2=https://jerrykd.alwaysdata.net/
-PAAS3=
+PAAS3=https://keeplive.bhkyakubov.workers.dev/
 
 # koyeb账号保活
 KOYEB_ACCOUNT=

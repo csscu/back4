@@ -9,9 +9,9 @@ KOYEB_ACCOUNT=
 KOYEB_PASSWORD=
 
 # 哪吒三个参数，不需要的话可以留空，删除或在这三行最前面加 # 以注释
-NEZHA_SERVER=127.0.0.1
-NEZHA_PORT=55556
-NEZHA_KEY=pMliaW2ZMai3JmJqsX
+NEZHA_SERVER=
+NEZHA_PORT=
+NEZHA_KEY=
 
 # Argo 固定域名隧道的两个参数,这个可以填 Json 内容或 Token 内容，获取方式看 https://github.com/fscarmen2/X-for-Glitch，不需要的话可以留空，删除或在这三行最前面加 # 以注释
 ARGO_AUTH='{"AccountTag":"a56b07a2e3456e1bb60ee6afcd4dc745","TunnelSecret":"fT8tuRYJGCR2pof+HqP3M1vbNeBAK2dRLzSektHr0II=","TunnelID":"c7adce3d-aeac-47b0-8fbf-5f42ca414d92"}'

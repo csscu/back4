@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # 其他Paas保活
 PAAS1=https://lapis-future-sprout.glitch.me/
-PAAS2=https://jerrykd.alwaysdata.net/
-PAAS3=https://keeplive.bhkyakubov.workers.dev/
+PAAS2=
+PAAS3=
 
 # koyeb账号保活
 KOYEB_ACCOUNT=

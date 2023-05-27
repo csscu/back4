@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 其他Paas保活
-PAAS1=https://lapis-future-sprout.glitch.me/
+PAAS1=
 PAAS2=
 PAAS3=
 
